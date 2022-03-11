@@ -175,3 +175,18 @@ test.c:8:8: error: '_strdup' redeclared without dllimport attribute: previous dl
 cc1.exe: all warnings being treated as errors
 Compilation failed
 b37a022
+10 Mar 2022 21:11:23: 
+ exercises.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+In file included from test.c:5:
+exercises.c: In function 'crearVector':
+exercises.c:88:11: error: function returns address of local variable [-Werror=return-local-addr]
+   88 |    return &array;
+      |           ^~~~~~
+test.c: At top level:
+test.c:8:8: error: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Werror=attributes]
+    8 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+cf90b39

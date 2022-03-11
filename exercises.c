@@ -37,9 +37,8 @@ Utilice la función sumaN.
 */
 
 void sumaNultimos(int a[], int n, int m, int * suma) {
-   int tamano = n- m;
-
-   *(suma) = sumaN(a[tamano], n);
+   
+   *(suma) = sumaN(a, m);
 }
 
 /*
@@ -83,10 +82,10 @@ Vector * crearVector(int n) {
 
    Vector array;
 
-   array.datos = (Vector *) calloc (n, sizeof(Vector));
+   array.datos = (int *) calloc (n, sizeof(int));
    array.capacidad = n;
 
-   return NULL;
+   return &array;
 }
 
 /*
