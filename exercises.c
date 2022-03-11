@@ -79,13 +79,11 @@ typedef struct {
 } Vector;
 
 Vector * crearVector(int n) {
+   Vector *array = NULL;
 
-   Vector array;
+   array = (Vector *) calloc (n, sizeof(Vector));
 
-   array.datos = (int *) calloc (n, sizeof(int));
-   array.capacidad = n;
-
-   return array.datos;
+   return array;
 }
 
 /*
