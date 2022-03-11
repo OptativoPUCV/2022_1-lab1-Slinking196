@@ -37,7 +37,9 @@ Utilice la función sumaN.
 */
 
 void sumaNultimos(int a[], int n, int m, int * suma) {
-   
+   int cantidadEliminada = n - m;
+
+   a = a + cantidadEliminada;
    *(suma) = sumaN(a, m);
 }
 
@@ -78,12 +80,14 @@ typedef struct {
    int capacidad; // capacidad del arreglo
 } Vector;
 
+Vector array;
+
 Vector * crearVector(int n) {
-   Vector *array = NULL;
 
-   array = (Vector *) calloc (n, sizeof(Vector));
+   array.datos = (int *) calloc (n, sizeof(int));
+   array.capacidad = n;
 
-   return array;
+   return &array;
 }
 
 /*
