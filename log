@@ -221,3 +221,17 @@ test.c:8:8: error: '_strdup' redeclared without dllimport attribute: previous dl
 cc1.exe: all warnings being treated as errors
 Compilation failed
 1a2ebfe
+10 Mar 2022 21:19:19: 
+ exercises.c | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+test.c:8:8: error: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Werror=attributes]
+    8 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+test.c: In function 'test_creaP':
+test.c:111:16: error: implicit declaration of function 'crearPersona' [-Werror=implicit-function-declaration]
+  111 |     Persona* p=crearPersona(nombre, "15489XXX-2", edad);
+      |                ^~~~~~~~~~~~
+test.c:111:16: error: initialization of 'Persona *' from 'int' makes pointer from integer without a cast [-Werror=int-conversion]
+cc1.exe: all warnings being treated as errors
+Compilation failed
+5deb5fe
