@@ -123,3 +123,30 @@ test.c:8:8: error: '_strdup' redeclared without dllimport attribute: previous dl
 cc1.exe: all warnings being treated as errors
 Compilation failed
 917f131
+10 Mar 2022 21:08:44: 
+ exercises.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+exercises.c: In function 'sumaNultimos':
+exercises.c:42:21: error: passing argument 1 of 'sumaN' makes pointer from integer without a cast [-Werror=int-conversion]
+   42 |    *(suma) = sumaN(a[tamano], n);
+      |                    ~^~~~~~~~
+      |                     |
+      |                     int
+exercises.c:21:15: note: expected 'int *' but argument is of type 'int'
+   21 | int sumaN(int a[], int N) {
+      |           ~~~~^~~
+exercises.c: In function 'crearVector':
+exercises.c:86:16: error: assignment to 'int *' from incompatible pointer type 'Vector *' [-Werror=incompatible-pointer-types]
+   86 |    array.datos = (Vector *) calloc (n, sizeof(Vector));
+      |                ^
+exercises.c:84:11: error: variable 'array' set but not used [-Werror=unused-but-set-variable]
+   84 |    Vector array;
+      |           ^~~~~
+test.c: At top level:
+test.c:8:8: error: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Werror=attributes]
+    8 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+11f1fbe

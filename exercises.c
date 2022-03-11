@@ -39,7 +39,7 @@ Utilice la función sumaN.
 void sumaNultimos(int a[], int n, int m, int * suma) {
    int tamano = n- m;
 
-   *(suma) = sumaN(*(a + tamano), n);
+   *(suma) = sumaN(a[tamano], n);
 }
 
 /*
@@ -63,7 +63,7 @@ Persona* crearPersona(char nombre[], char rut[], int edad) {
    strcpy(humano.rut, rut);
    humano.edad = edad;
 
-   return &humano;
+   return NULL;
 }
 
 /*
@@ -86,7 +86,7 @@ Vector * crearVector(int n) {
    array.datos = (Vector *) calloc (n, sizeof(Vector));
    array.capacidad = n;
 
-   return &array;
+   return NULL;
 }
 
 /*
