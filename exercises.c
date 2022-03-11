@@ -57,7 +57,13 @@ typedef struct {
 
 
 Persona* crearPersona(char nombre[], char rut[], int edad) {
-   return NULL;
+   Persona humano;
+
+   strcpy(humano.nombre, nombre);
+   strcpy(humano.rut, rut);
+   humano.edad = edad;
+
+   return &humano;
 }
 
 /*
@@ -74,7 +80,13 @@ typedef struct {
 } Vector;
 
 Vector * crearVector(int n) {
-   return NULL;
+
+   Vector array;
+
+   array.datos = (Vector *) calloc (n, sizeof(Vector));
+   array.capacidad = n;
+
+   return &array;
 }
 
 /*
@@ -83,7 +95,7 @@ Programe la función void asignarValor(Vector * v, int i, int valor),
 la cual asigna el valor a la posición i del vector v.
 */
 void asignarValor(Vector * v, int i, int valor) {
-
+   v->datos[i] = valor;
 }
 
 /*
@@ -92,7 +104,8 @@ Programe la función int obtenerValor(Vector * v, int i),
 la cual retorna el valor en la posición i del vector v.
 */
 int obtenerValor(Vector * v, int i) {
-   return 0;
+
+   return v->datos[i];
 }
 
 /*
@@ -101,7 +114,11 @@ Función que suma los vectores `a` y `b` y
 actualiza el vector `c` con el resultado de la suma.
 */
 void sumaV(Vector * a, Vector * b, Vector * c) {
+   int cont;
 
+   for (cont = 0; cont < a->capacidad; cont++) {
+      c->datos[cont] = a->datos[cont] + b->datos[cont];
+   }
 }
 
 /*
@@ -110,5 +127,6 @@ Use las operaciones implementadas de vectores para
 sumar (a1,a2)+(b1+b2). Almacene el resultado en el vector c.
 */
 void sumaV2(int a1, int a2, int b1, int b2, Vector *c){
-
+   c->datos[0] = a1 + b1;
+   c->datos[1] = a2 + b2;
 }
