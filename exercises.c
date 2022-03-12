@@ -85,6 +85,8 @@ Vector array;
 Vector * crearVector(int n) {
 
    array.datos = (int *) calloc (n, sizeof(int));
+   if (array.datos == NULL) exit(1);
+
    array.capacidad = n;
 
    return &array;
