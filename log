@@ -398,3 +398,9 @@ Compilation failed
  tests:  8|0
 total_score: 70/70
 10f5e55
+13 Mar 2022 22:59:56: 
+ exercises.c | 17 +++++++----------
+ 1 file changed, 7 insertions(+), 10 deletions(-)
+ tests:  8|0
+total_score: 70/70
+da5275a
