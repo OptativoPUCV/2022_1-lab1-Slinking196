@@ -80,16 +80,16 @@ typedef struct {
    int capacidad; // capacidad del arreglo
 } Vector;
 
+Vector array;
 
 Vector * crearVector(int n) {
-   Vector array[1];
 
-   array->datos = (int *) calloc (n, sizeof(int));
-   if (array->datos == NULL) exit(1);
+   array.datos = (int *) calloc (n, sizeof(int));
+   if (array.datos == NULL) exit(1);
 
-   array->capacidad = n;
+   array.capacidad = n;
 
-   return array;
+   return &array;
 }
 
 /*
@@ -130,6 +130,15 @@ Use las operaciones implementadas de vectores para
 sumar (a1,a2)+(b1+b2). Almacene el resultado en el vector c.
 */
 void sumaV2(int a1, int a2, int b1, int b2, Vector *c){
-   c->datos[0] = a1 + b1;
-   c->datos[1] = a2 + b2;
+   Vector *a;
+   Vector *b;
+
+   a = crearVector(2);
+   b = crearVector(2);
+   asignarValor(a, 0, a1);
+   asignarValor(a, 1, a2);
+   asignarValor(b, 0, b1);
+   asignarValor(b, 1, b2);
+
+   sumaV(a, b, c);
 }
