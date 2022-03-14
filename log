@@ -370,3 +370,14 @@ ea03560
  tests:  7|1
 total_score: 60/70
 5d47b44
+13 Mar 2022 22:52:19: 
+ exercises.c | 11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
+In file included from test.c:5:
+test.c: In function 'crearVector':
+exercises.c:86:17: error: 'array' is used uninitialized in this function [-Werror=uninitialized]
+   86 |    array->datos = (int *) calloc (n, sizeof(int));
+      |    ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+10230f5
